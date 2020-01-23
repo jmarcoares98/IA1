@@ -51,7 +51,6 @@ function bindListenerToClassName(className, func, listenerType) {
   function documentClick (e) {
     var sideMenu = document.getElementById("sideMenu");
     var hamburgerMenu = document.getElementById("menuBtnIcon");
-    //document.getElementById("sideMenu").style.width = "250px"; //open up menu  
 
     if(e.target != hamburgerMenu && e.target.parentNode != hamburgerMenu && e.target != sideMenu){
       document.getElementById("menuBtnIcon").classList.remove("fa-times"); //Change back to hamburger when menu closed
