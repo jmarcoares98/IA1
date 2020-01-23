@@ -1,0 +1,154 @@
+<!-- CptS 489, Spring 2020
+     Project: IA #1
+     File: index.html
+     This file defines a skeleton single page web app using pure JavaScript.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Begin HEAD section of document. Here we must use HTML comments as shown here. -->
+    <!-- Default target for all hyperlinks in this file is _top; see https://www.w3schools.com/tags/att_base_target.asp -->
+    <base target="_top"> 
+    <!-- Provide metadata on this file. Can be used by browsers, search engines, etc. -->
+    <meta charset="utf-8">
+    <!-- HTML5 method that specifies viewable part of page ('viewport'). Always use the following,
+         which sets the width of the page to the width of the device and scales page content to fit into page-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import External stylesheets and libraries using 'CDN' (content delivery network) links: -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Our local CSS stylesheets -->
+    <link rel="stylesheet" href = "styles/navbar.css">
+    <link rel="shortcut icon" href="https://previews.dropbox.com/p/thumb/AAoREuvuLj1BYHpiCaus0E8JjwMIYzNaWHa_3ARDGko6DAI2I0QyG19bfTgrZJlmjZtVvSt2f3VmSWADY03P_i8cuNRwbzZotuobC1zaTlvs0tP74gAin_O1blif8FrG6HW_QDd9_V9sjbUYJ-s92CLQ4xV00PLpeO683-IwCsb4PA05Q8vcIuZ2lodlSNprl2TFqcl7Mfv6-pZExz5MrZaya1mp_vOw1a4YPY-tSYqnbG1Z1Xqt356Nj-vX5MpfOUXHaZ1OfhbfKJMz-xyOR3GLNT9A2OW_V89YCUbQaHwgAS3tT3La5Vr_lnkVdC-xxSp8K7ek6Wk-8moEayEGE-rS/p.png?fv_content=true&size_mode=5">
+
+</head>
+ 
+<body style="background-color: white">
+  <!-- Begin the BODY section of the document.  -->
+  
+  <!-- Fixed menu and button content goes here to define app structure: the top bar,
+       the side menu, the bottom bar, and the floating contextual action button  -->
+  <div id="navBar" class="navbar" style="background-color: #2e1a07">
+      <!-- The top navigation bar -->
+      <div>
+        <span class="navbarItems">
+          <button id="menuBtn" style="background-color: transparent; 
+          border-color: transparent; text-align: center">
+            <span id="menuBtnIcon" class="fas fa-bars" style="color:white;
+            font-size: 30px; cursor:pointer; text-align: center">
+            </span>
+          </button>
+          
+          <span id="topBarTitle" style="color:white; font-size: 18px">
+            MARCO ARES IA1: ABOUT ME</span>
+        </span>
+        </div>
+  </div>
+
+  <div id="sideMenu" class="sidenav" style="background-color: #2e1a07">
+      <!--SIDE MENU TITLE -->
+      <div class="sidenavtitle">
+        <span id="userID" style="color: white; font-size:14px">&nbsp;MENU&nbsp;&nbsp;</span>
+      </div>
+  <!--END SIDE MENU TITLE-->
+  <!--BEGIN MAIN MENU CONTENT -->
+    <div id="mainMenuContent">
+    <!--BEGIN GROUP OF MODE/ACTION BUTTONS -->
+    <!--Mode buttons show current mode
+        Action buttons are contextual; they provide easy access to most important functionality in current mode -->
+      <div id = "aboutmeModeMenu">
+      <a class= "aboutmeModeItem">
+        <span style="background-color: transparent; 
+          border-color: transparent; text-align: left">MORE ABOUT ME
+        </span>
+      </a>
+      <a class= "aboutmeModeItem">
+        <span style="background-color: transparent; 
+          border-color: transparent; text-align: left">EDUCATION
+        </span>
+      </a>
+      <a class= "aboutmeModeItem">
+        <span style="background-color: transparent; 
+          border-color: transparent; text-align: left">ORIGINS
+        </span>
+      </a>
+      </div>
+
+      <div id = "portfolioModeMenu">
+      <a class= "portfolioModeItem">
+        <span style="background-color: transparent; 
+          border-color: transparent; text-align: left">PROJECTS
+        </span>
+      </a>
+      </div>
+
+      <div id = "hobbiesModeMenu">
+      <a class= "hobbiesModeItem">
+        <span style="background-color: transparent; 
+          border-color: transparent; text-align: left">MOVIES
+        </span>
+      </a>
+      <a class= "hobbiesModeItem">
+        <span style="background-color: transparent; 
+          border-color: transparent; text-align: left">TRAVELLING
+        </span>
+      </a>
+      <a class= "hobbiesModeItem">
+        <span style="background-color: transparent; 
+          border-color: transparent; text-align: left">MUSIC
+        </span>
+      </a>
+      </div>
+
+
+    <!-- END GROUP OF MODE/ACTION BUTTONS -->
+    <!-- END MAIN MENU CONTENT -->
+    </div>
+
+
+<!-- END SIDEMENU -->
+  </div>
+
+   <!-- START BOTTOM NAVBAR -->
+   <div class="bottombar" id="theBottomBar" style="background-color:#2e1a07; z-index: 100">
+    <a id="aboutmeMode" class="bottomBarBtn"><span style="display:block; padding-top:3px; color: white"
+      class="fas fa-user-circle"></span><span style="display:block;font-size:
+      small; color: white" >About Me</span></a>
+    <a id="portfolioMode" class="bottomBarBtn"><span style="display:block; padding-top:3px; color: white"
+      class="nonMenuItem fas fa-file"></span><span style="display:block;font-size:
+      small; color: white">Portfolio</span></a>
+   <a id="hobbiesMode" class="bottomBarBtn"><span style="display:block; padding-top:3px; color: white"
+      class="nonMenuItem fas fa-flag"></span><span style="display:block;font-size:
+      small; color: white">Hobbies</span></a> 
+   </div> 
+  <!-- END BOTTOM NAVBAR -->
+    
+  <!-- Single App page definitions go here. -->
+  <!-- hello page definition  -->
+
+  <div id="aboutmeModeDiv" class="paddedPage">
+    <h2 align ="left">this is me.</h2>
+    <div w3-include-html="html/aboutme.html" ></div>
+  </div>
+
+  <div id="portfolioModeDiv" class="paddedPage">
+    <h2 align ="left">this is my work.</h2>
+    <div w3-include-html="html/portfolio.html" ></div>
+  </div>
+
+  <div id="hobbiesModeDiv" class="paddedPage">
+    <h2 align ="left">these are my hobbies.</h2>
+    <div w3-include-html="html/hobbies.html" ></div>
+  </div>
+
+    <!-- Begin SCRIPT section of document. -->
+  
+    <script src="scripts/includeHTML.js"></script>
+    <script src="scripts/startUp.js"></script>
+    <script src="scripts/eventHandlers.js"></script>
+
+ </body>
+
+
+</html>
